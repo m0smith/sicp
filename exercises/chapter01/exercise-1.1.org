@@ -21,6 +21,7 @@ presented.
 
 
 ** (+ 5 3 4)
+*** Scheme
 #+BEGIN_SRC scheme
 (+ 5 3 4)
 #+END_SRC
@@ -31,6 +32,7 @@ presented.
 
 
 ** (- 9 1)
+*** Scheme
 #+BEGIN_SRC scheme
 (- 9 1)
 #+END_SRC
@@ -40,6 +42,7 @@ presented.
 #+END_SRC
 
 ** (/ 6 2)
+*** Scheme
 #+BEGIN_SRC scheme
 
 #+END_SRC
@@ -50,6 +53,7 @@ presented.
 #+END_SRC
 
 ** (+ (* 2 4) (- 4 6))
+*** Scheme
 #+BEGIN_SRC scheme
 (+ (* 2 4) (- 4 6))
 #+END_SRC
@@ -59,7 +63,8 @@ presented.
 ;;=> 6
 #+END_SRC
 
-----------------------
+** (define a 3)
+*** Scheme
 #+BEGIN_SRC scheme
 (define a 3)
 (define b (+ a 1))
@@ -73,7 +78,8 @@ define in scheme ,in this context, maps directly to def in clojure
 ;; => #'user.b
 #+END_SRC
 
-----------------------
+** (+ a b (* a b))
+*** Scheme
 #+BEGIN_SRC scheme
 (+ a b (* a b))
 #+END_SRC
@@ -83,19 +89,19 @@ define in scheme ,in this context, maps directly to def in clojure
 ;;=> 19
 #+END_SRC
 
-----------------------
+** (= a b)
+*** Scheme
 #+BEGIN_SRC scheme
 (= a b)
 #+END_SRC
-
 
 #+BEGIN_SRC clojure
 (= a b)
 ;;=> false
 #+END_SRC
 
-
-----------------------
+** (if (and (> b a) (< b (* a b))) ...
+*** Scheme
 #+BEGIN_SRC scheme
   (if (and (> b a) (< b (* a b)))
     b
@@ -109,7 +115,8 @@ define in scheme ,in this context, maps directly to def in clojure
   ;; => 4
 #+END_SRC
 
-----------------------
+** (cond ((= a 4) 6) ...
+*** Scheme
 #+BEGIN_SRC scheme
 (cond ((= a 4) 6)
       ((= b 4) (+ 6 7 a))
@@ -129,8 +136,8 @@ define in scheme ,in this context, maps directly to def in clojure
 ;;=> 16
 #+END_SRC
 
-
-----------------------
+** (+ 2 (if (> b a) b a))
+*** Scheme
 #+BEGIN_SRC scheme
 (+ 2 (if (> b a) b a))
 #+END_SRC
@@ -140,7 +147,8 @@ define in scheme ,in this context, maps directly to def in clojure
 ;;=> 6
 #+END_SRC
 
-----------------------
+** (* (cond ((> a b) a) ...
+*** Scheme
 #+BEGIN_SRC scheme
 (* (cond ((> a b) a)
          ((< a b) b)
