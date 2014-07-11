@@ -1,122 +1,159 @@
-(ns sicp.ch01.exercise_1_1)
+* Exercise 1.1: 
+  (page 26) 
 
-;; 
-;;  Exercise 1.1: (page 26)
-;;  Below is a sequence of expressions. What is the
-;;  result printed by the interpreter in response to each expression?
-;;  Assume that the sequence is to be evaluated in the order in which
-;;  it is presented.
-
-;; First present the text from the book in SCHEME
-;; then in Clojure
-;; => then the output
+Below is a sequence of expressions. What is the result
+printed by the interpreter in response to each expression?  Assume
+that the sequence is to be evaluated in the order in which it is
+presented.
 
 
-;; ======== SCHEME
-;; 10
-
-;; -------- CLOJURE
+** 10
+#+BEGIN_SRC scheme
+10
+#+END_SRC
+#+BEGIN_SRC clojure
 10
 ;;=> 10
+#+END_SRC
 
-;; ======== SCHEME
-;;(+ 5 3 4)
 
-;; -------- CLOJURE
+** (+ 5 3 4)
+#+BEGIN_SRC scheme
+(+ 5 3 4)
+#+END_SRC
+#+BEGIN_SRC clojure
 (+ 5 3 4)
 ;;=> 12
+#+END_SRC
 
-;; ======== SCHEME
-;;(- 9 1)
 
-;; -------- CLOJURE
+** (- 9 1)
+#+BEGIN_SRC scheme
+(- 9 1)
+#+END_SRC
+#+BEGIN_SRC clojure
 (- 9 1)
 ;;=> 8
+#+END_SRC
 
-;; ======== SCHEME
-;;(/ 6 2)
+** (/ 6 2)
+#+BEGIN_SRC scheme
 
-;; -------- CLOJURE
+#+END_SRC
+
+#+BEGIN_SRC clojure
 (/ 6 2)
 ;;=> 3
+#+END_SRC
 
-;; ======== SCHEME
-;;(+ (* 2 4) (- 4 6))
+** (+ (* 2 4) (- 4 6))
+#+BEGIN_SRC scheme
+(+ (* 2 4) (- 4 6))
+#+END_SRC
 
-;; -------- CLOJURE
+#+BEGIN_SRC clojure
 (+ (* 2 4) (- 4 6))
 ;;=> 6
+#+END_SRC
 
-;; ======== SCHEME
-;;(define a 3)
-;;(define b (+ a 1))
+----------------------
+#+BEGIN_SRC scheme
+(define a 3)
+(define b (+ a 1))
+#+END_SRC
 
-;; -------- CLOJURE
-;; define,in this context, maps directly to def
+define in scheme ,in this context, maps directly to def in clojure
+
+#+BEGIN_SRC clojure
 (def a 3)
 (def b (+ a 1))
-;; => #'sicp.ex01.ex_1_1/b
+;; => #'user.b
+#+END_SRC
 
-;; ======== SCHEME
-;;(+ a b (* a b))
+----------------------
+#+BEGIN_SRC scheme
+(+ a b (* a b))
+#+END_SRC
 
-;; -------- CLOJURE
+#+BEGIN_SRC clojure
 (+ a b (* a b))
 ;;=> 19
+#+END_SRC
 
-;; ======== SCHEME
-;;(= a b)
+----------------------
+#+BEGIN_SRC scheme
+(= a b)
+#+END_SRC
 
-;; -------- CLOJURE
+
+#+BEGIN_SRC clojure
 (= a b)
 ;;=> false
-
-;; ======== SCHEME
-;;(if (and (> b a) (< b (* a b)))
-;;  b
-;;  a)
-
-;; -------- CLOJURE
-(if (and (> b a) (< b (* a b)))
-  b
-  a)
-;; => 4
+#+END_SRC
 
 
-;; ======== SCHEME
-;;(cond ((= a 4) 6)
-;;      ((= b 4) (+ 6 7 a))
-;;      (else 25))
+----------------------
+#+BEGIN_SRC scheme
+  (if (and (> b a) (< b (* a b)))
+    b
+    a)
+#+END_SRC
 
-;; -------- CLOJURE 
-;; cond in clojure works the same as in scheme but without the
-;; extra parans around each case.  Also, there is no else in clojure
-;; so anything that evaluates to truthy will work, with :else being traditional.
+#+BEGIN_SRC clojure
+  (if (and (> b a) (< b (* a b)))
+    b
+    a)
+  ;; => 4
+#+END_SRC
+
+----------------------
+#+BEGIN_SRC scheme
+(cond ((= a 4) 6)
+      ((= b 4) (+ 6 7 a))
+      (else 25))
+#+END_SRC
+
+ cond in clojure works the same as in scheme but without the extra
+ parans around each case.  Also, there is no else in clojure so
+ anything that evaluates to truthy will work, with :else being
+ traditional.
+
+#+BEGIN_SRC clojure 
 (cond (= a 4) 6
       (= b 4) (+ 6 7 a)
       :else 25)
 
 ;;=> 16
+#+END_SRC
 
 
-;; ======== SCHEME
-;;(+ 2 (if (> b a) b a))
+----------------------
+#+BEGIN_SRC scheme
+(+ 2 (if (> b a) b a))
+#+END_SRC
 
-;; -------- CLOJURE
+#+BEGIN_SRC clojure
 (+ 2 (if (> b a) b a))
 ;;=> 6
+#+END_SRC
 
-;; ======== SCHEME
-;;(* (cond ((> a b) a)
-;;         ((< a b) b)
-;;         (else -1))
-;;   (+ a 1))
+----------------------
+#+BEGIN_SRC scheme
+(* (cond ((> a b) a)
+         ((< a b) b)
+         (else -1))
+   (+ a 1))
+#+END_SRC
 
-;; -------- CLOJURE
+Again, remove extra parens
+
+#+BEGIN_SRC clojure
 (* (cond (> a b) a
          (< a b) b
          :else -1)
    (+ a 1))
 
 ;;=> 16
+#+END_SRC
+
 
