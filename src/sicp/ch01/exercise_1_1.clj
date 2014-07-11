@@ -1,4 +1,4 @@
-(ns sicp.ch01.ex_1_1)
+(ns sicp.ch01.exercise_1_1)
 
 ;; 
 ;;  Exercise 1.1: (page 26)
