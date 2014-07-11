@@ -1,7 +1,8 @@
 (ns sicp.ch01.ex_1_1)
 
-;;
-;;  Exercise 1.1: Below is a sequence of expressions. What is the
+;; 
+;;  Exercise 1.1: (page 26)
+;;  Below is a sequence of expressions. What is the
 ;;  result printed by the interpreter in response to each expression?
 ;;  Assume that the sequence is to be evaluated in the order in which
 ;;  it is presented.
@@ -9,6 +10,7 @@
 ;; First present the text from the book in SCHEME
 ;; then in Clojure
 ;; => then the output
+
 
 ;; ======== SCHEME
 ;; 10
@@ -50,6 +52,7 @@
 ;;(define b (+ a 1))
 
 ;; -------- CLOJURE
+;; define,in this context, maps directly to def
 (def a 3)
 (def b (+ a 1))
 ;; => #'sicp.ex01.ex_1_1/b
@@ -85,7 +88,10 @@
 ;;      ((= b 4) (+ 6 7 a))
 ;;      (else 25))
 
-;; -------- CLOJURE
+;; -------- CLOJURE 
+;; cond in clojure works the same as in scheme but without the
+;; extra parans around each case.  Also, there is no else in clojure
+;; so anything that evaluates to truthy will work, with :else being traditional.
 (cond (= a 4) 6
       (= b 4) (+ 6 7 a)
       :else 25)
