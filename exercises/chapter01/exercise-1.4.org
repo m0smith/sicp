@@ -11,8 +11,6 @@ the behavior of the following procedure:
 (define (a-plus-abs-b a b)
   ((if (> b 0) + -) a b))
 #+END_SRC
-
-   
    
 ** Clojure
 #+BEGIN_SRC clojure
@@ -21,4 +19,30 @@ the behavior of the following procedure:
 #+END_SRC
 
 
+Looking at some usage we see that the function does just as the name implies,
+it adds a to the absolute value of b:
+
+user> (a-plus-abs-b 1 2)
+3
+user> (a-plus-abs-b 1 -2)
+3
+
+This is done by adding a and b if b is poitive or subtracting b from a
+if b is negative.  Keep in mind that subtracting a negative is the
+same as adding the positive, at least that is what I learned in school.
+
+The way this happens is b first is checked for negative by the inner if call.  
+#+BEGIN_SRC clojure
+(if (> b 0) + -)
+#+END_SRC
+
+The symbol '-' is returned for negative '+' otherwise.  This symbol is
+then used as the first symbol in the outer expression:
+
+#+BEGIN_SRC clojure
+(- a b)
+#+END_SRC
+
+Not bad, on the 4th exercise we are now introduced to functions as
+citizens of the environment that can be used as other data.
 
