@@ -1,0 +1,24 @@
+* Exercise 1.4
+
+(page 27)
+
+Observe that our model of evaluation allows for combinations whose
+operators are compound expressions. Use this observation to describe
+the behavior of the following procedure:
+
+** Scheme
+#+BEGIN_SRC scheme
+(define (a-plus-abs-b a b)
+  ((if (> b 0) + -) a b))
+#+END_SRC
+
+   
+   
+** Clojure
+#+BEGIN_SRC clojure
+(defn a-plus-abs-b [a b]
+  ((if (> b 0) + -) a b)) 
+#+END_SRC
+
+
+
