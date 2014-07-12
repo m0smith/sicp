@@ -19,7 +19,6 @@ presented.
 ;;=> 10
 #+END_SRC
 
-
 ** (+ 5 3 4)
 *** Scheme
 #+BEGIN_SRC scheme
@@ -30,7 +29,6 @@ presented.
 (+ 5 3 4)
 ;;=> 12
 #+END_SRC
-
 
 ** (- 9 1)
 *** Scheme
